@@ -1,9 +1,9 @@
-﻿###Modify values of lines 4,7-10,13,16,19,and 22 for your network setup#####
+﻿###Modify values of lines 4,7-10,13,16,19,22, and 47 for your network setup#####
 
 #Domain/parent OU#
 $MainOU= 'DC=adatum,DC=com'
 
-
+#OU's to search for user compliance#
 $TargetOU = @("OU=IT,DC=Adatum,DC=com",
            "OU=Sales,DC=Adatum,DC=Com",
             "OU=Research,DC=Adatum,DC=Com",
