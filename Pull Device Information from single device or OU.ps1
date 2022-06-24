@@ -135,9 +135,9 @@ $intRowNet = $intRowNet + 1
 }
 }
 
-# ==============================================================================================
-# Function Name 'WMILookupCred'-Uses Alternative Credential-Gathers info using WMI.
-# ==============================================================================================
+
+#Function Name 'WMILookupCred'-Uses Alternative Credential-Gathers info using WMI#
+
 Function WMILookupCred {
 foreach ($StrComputer in $colComputers){
 		$GenItems1 = gwmi Win32_ComputerSystem -Comp $StrComputer -Credential $cred
@@ -275,9 +275,9 @@ $intRowNet = $intRowNet + 1
 }
 }
 
-# =============================================================================================
+
 # Function Name 'ListComputers' - Enumerates ALL computer objects in AD
-# ==============================================================================================
+
 Function ListComputers {
 $strCategory = "computer"
 
@@ -296,9 +296,9 @@ foreach ($objResult in $colResults)
     {$objComputer = $objResult.Properties; $objComputer.name}
 }
 
-# ==============================================================================================
+
 # Function Name 'ListServers' - Enumerates ALL Servers objects in AD
-# ==============================================================================================
+
 Function ListServers {
 $strCategory = "computer"
 $strOS = "Windows*Server*"
@@ -318,26 +318,26 @@ foreach ($objResult in $colResults)
     {$objComputer = $objResult.Properties; $objComputer.name}
 }
 
-# ========================================================================
+
 # Function Name 'ListTextFile' - Enumerates Computer Names in a text file
 # Create a text file and enter the names of each computer. One computer
 # name per line. Supply the path to the text file when prompted.
-# ========================================================================
+
 Function ListTextFile {
 	$strText = Read-Host "Enter the path for the text file"
 	$colComputers = Get-Content $strText
 }
 
-# ========================================================================
+
 # Function Name 'SingleEntry' - Enumerates Computer from user input
-# ========================================================================
+
 Function ManualEntry {
 	$colComputers = Read-Host "Enter Computer Name or IP" 
 }
 
-# ==============================================================================================
+
 # Script Body
-# ==============================================================================================
+
 $erroractionpreference = "SilentlyContinue"
 
 
